@@ -26,7 +26,7 @@ packer.startup(function(use)
     end,
     run = ":TSUpdate",
   }
-  use { "nathom/filetype.nvim" } -- speed up filetype detection
+  --use { "nathom/filetype.nvim" } -- speed up filetype detection
   use {
     "lewis6991/gitsigns.nvim",
     requires = {
