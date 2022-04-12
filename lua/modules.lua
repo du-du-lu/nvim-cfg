@@ -107,7 +107,6 @@ packer.startup(function(use)
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
       require("nvim-tree").setup{
-        auto_close = true,
         git = {
           enable = false
         }
