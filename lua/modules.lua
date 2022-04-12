@@ -33,7 +33,8 @@ packer.startup(function(use)
       "nvim-lua/plenary.nvim",
     },
     config = function()
-      require("gitsigns").setup()
+      require("gitsigns").setup({
+        current_line_blame = true})
     end,
     -- tag = 'release' -- To use the latest release
   }
