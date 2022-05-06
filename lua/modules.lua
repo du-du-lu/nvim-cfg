@@ -34,7 +34,19 @@ packer.startup(function(use)
     },
     config = function()
       require("gitsigns").setup({
-        current_line_blame = true})
+        current_line_blame = true,
+        print("gitsign setup called");
+        on_attach = function (bufnr)
+          local gs = package.loaded.gitsigns
+          local function map(mode, l, r, opts)
+            opts = opts or {}
+            opts.buffer = bufnr
+            vim.keymap.set(mode, l, r, opts)
+          end
+          map('n', '<leader>p', gs.preview_hunk)
+          map('n', '<leader>h', gs.setqflist)
+        end
+      })
     end,
     -- tag = 'release' -- To use the latest release
   }
@@ -128,6 +140,7 @@ packer.startup(function(use)
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons',
     config = function()
       require("bufferline").setup {
+        tag = "v2.*",
         options = {
           -- 使用 nvim 内置lsp
           diagnostics = "nvim_lsp",
