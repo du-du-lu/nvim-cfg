@@ -11,14 +11,14 @@ treesitter.setup {
   highlight = {
     enable = true, -- false will disable the whole extension
   },
-  ensure_installed = {"rust", "c", "cpp", "lua"},
+  ensure_installed = {"rust", "c", "cpp", "lua", "toml", "json", "yaml", "python", "cmake", "make", "typescript"},
   incremental_selection = {
     enable = true,
     keymaps = {
       init_selection = "<CR>",
       node_incremental = "<CR>",
       scope_incremental = "<CR>",
-      node_decremental = "<CR>",
+      node_decremental = "<BS>",
     },
   },
   indent = {

@@ -35,7 +35,6 @@ packer.startup(function(use)
     config = function()
       require("gitsigns").setup({
         current_line_blame = true,
-        print("gitsign setup called");
         on_attach = function (bufnr)
           local gs = package.loaded.gitsigns
           local function map(mode, l, r, opts)
@@ -90,6 +89,7 @@ packer.startup(function(use)
     config = function()
       require("nvim-gps").setup { separator = " " }
     end,
+    --after = "nvim-treesitter/nvim-treesitter"
   }
 
   use { -- Telescope fuzzy finder
