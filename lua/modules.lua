@@ -137,7 +137,7 @@ packer.startup(function(use)
     end
   }
 
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons',
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', branch = 'main',
     config = function()
       require("bufferline").setup {
         tag = "v2.*",

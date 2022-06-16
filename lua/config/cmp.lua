@@ -42,13 +42,12 @@ local lsp_symbols = {
 cmp.setup {
   confirmation = { default_behaviour = cmp.ConfirmBehavior.Replace },
   sources = {
-    { name = "buffer" },
     { name = "nvim_lsp" },
-    --{ name = "cmp_tabnine" },
+    { name = "luasnip" },
     { name = "treesitter" },
     { name = "nvim_lua" },
     { name = "path" },
-    { name = "luasnip" },
+    { name = "buffer" },
   },
   mapping = {
     ["<cr>"] = cmp.mapping.confirm(),
@@ -92,13 +91,12 @@ cmp.setup {
         end
       end
       item.menu = ({
-        buffer = "[Buffer]",
-        cmp_tabnine = "[T9]",
         nvim_lsp = "[LSP]",
         nvim_lua = "[NLUA]",
         treesitter = "[TS]",
         path = "[Path]",
         luasnip = "[Snippet]",
+        buffer = "[Buffer]",
       })[entry.source.name]
       return item
     end,
